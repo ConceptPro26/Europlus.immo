@@ -34,9 +34,9 @@ $(".owl-carousel").owlCarousel({
 /** google_map js **/
 
 function myMap() {
-    var defaultLocation = {
-        center: new window google.maps.LatLng(48.837167, 2.245380),
-        zoom: 18,
-    };
-    var map = new window google.maps.Map(document.getElementById("googleMap"), mapProp);
+var mapProp= {
+  center:new google.maps.LatLng(48.837167, 2.245380),
+  zoom:16,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
