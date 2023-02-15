@@ -33,10 +33,24 @@ $(".owl-carousel").owlCarousel({
 
 /** google_map js **/
 
-function myMap() {
-var mapProp= {
-  center:new google.maps.LatLng(48.837167, 2.245380),
-  zoom:16,
-};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 48.837167, lng: 2.245380 },
+    zoom: 14,
+    mapId: "24afead6c35d66f7",
+  });
+  const priceTag = document.createElement("div");
+
+  priceTag.className = "price-tag";
+  priceTag.textContent = "$2.5M";
+
+  const markerView = new google.maps.marker.AdvancedMarkerView({
+    map,
+    position: {     center: { lat: 48.837167, lng: 2.245380 },
+ },
+    content: priceTag,
+  });
 }
+
+window.initMap = initMap;
+
